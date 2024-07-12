@@ -1,0 +1,101 @@
+@media(max-width:640px){
+    .alertSection .alert{
+        width: 300px;
+        height: 200px;
+        font-size: medium;
+    }
+    .alertSection .alert button{
+        width: 120px;
+        height: 40px;
+    }
+    main{
+        padding: 0 10px;
+        width: calc(100% - 20px);
+    }
+    .Exam .question{
+        font-size: large;
+    }
+    .Exam .answers div{
+        font-size: medium;
+    }
+    .Exam .btn button{
+        height: 40px;
+        width: 100px;
+        font-size: small;
+        padding: 5px;
+    }
+    .LevelLine span {
+    height: 15px;
+    width:15px;
+    font-size: x-large;
+    font-weight: 100;
+    line-height: 25px;
+} 
+}
+@media (max-width:740px){
+    .resultsShow .content{
+        width: 500px;
+    }
+    .results{
+        width: 600px;
+    }
+}
+@media (max-width:650px){
+    .HelloWithUserName{
+        display: none;
+    }
+    .results{
+        width: 100%;
+    }
+    .results .message{
+        width: 400px;
+    }
+    .results .message h3{
+        font-size: medium;
+    }
+    .results .message .btns button{
+        font-size: 14.5px ;
+    }
+
+}
+@media (max-width:500px) {
+    .resultsShow .content{
+        border-radius: 0px;
+    }
+    .resultsShow .content section .resultDataShow {
+        display: flex;
+        flex-direction: column;
+        width:  200px;
+        height: 320px;
+    }
+    .resultsShow .content section .resultDataShow canvas{
+        width: 100px;height: 100px;
+        margin: auto;
+    }
+    .resultsShow .content section .resultDataShow .dataText{
+        width: 100%;
+        height: calc(100% - 120px);
+        margin-bottom: 20px;
+        display: flex;align-items: center;justify-content: space-around;flex-direction: column;
+    }
+    .resultsShow .content section .resultDataShow .dataText div{
+        text-align: center;
+    }
+    .resultsShow .content section .congratoilation{
+        font-size: 20px ;
+    }
+    .resultsShow .content section .congratoilation .persent{
+        font-size: 25px ;
+    }
+    .showReslut_QuestAns button{
+        width: 150px !important;
+        height: 40px !important;
+        font-size: 17px !important;
+    }
+    .WantToRelaodExam article {
+        width: calc(100% - 2px);
+    }
+    .WantToRelaodExam article h3{
+        font-size: large;
+    }
+}

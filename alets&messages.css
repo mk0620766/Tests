@@ -1,0 +1,71 @@
+.WantToRelaodExam{
+    width: 100%;
+    height: 100%;
+    display: flex;align-items: center;justify-content: center;
+    background-color: rgb(31, 31, 31);
+}
+.WantToRelaodExam article{
+    width: 500px;
+    height: 400px;
+    background-color: rgb(52, 52, 52);
+    box-shadow: 0 0 7.5px .1px white;
+    display: flex;align-items: center;justify-content: space-evenly;
+    flex-direction: column;
+    color: white;
+    font-size: larger;
+    border-radius: 20px;
+    margin-bottom: 0px;
+    opacity: 0;
+    animation: WantToRelaodExamMoveUp 1s ease-in-out forwards;
+}
+@keyframes WantToRelaodExamMoveUp{
+    0%{
+        margin-bottom: 0px;
+        opacity: 0;
+    }
+    100%{
+        margin-bottom: 100px;
+        opacity: 1;
+    }
+}
+.WantToRelaodExam article a{
+    color: rgb(198, 136, 255);
+    text-decoration:none;
+    position: relative;
+}
+.WantToRelaodExam article a::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: rgb(155, 99, 206);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: .3s;
+    transform: scaleX(0);
+
+}
+.WantToRelaodExam article a:hover::after {
+    transform: scaleX(1);
+}
+.WantToRelaodExam article div{
+    display: flex;
+    align-items: center;justify-content: center;
+    gap: 10px;
+}
+.WantToRelaodExam article span{
+    display: flex;align-items: center;justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    margin-right: 5px;
+}
+.WantToRelaodExam article select{
+    padding: 7.5px;
+    color: white;
+    background-color: rgb(85, 82, 72);
+    font-size: large;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+}

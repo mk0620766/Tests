@@ -1,0 +1,673 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;align-items: center;justify-content: center;
+    flex-direction: column;
+    padding: 0;margin: 0;
+    
+    overflow: hidden;
+}
+.Body_BG_img_class{
+    background-image: url(./bodyBg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+header{
+    width: calc(100% - 100px);
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    position: relative;
+}
+header section{
+    max-width: 300px;
+    display: flex;align-items: center;justify-content: center;
+    gap: 10px;
+    color: white;
+}
+header .logo{
+    font-size: larger;
+}
+header section span img{
+    margin-top: 8px;
+}
+header section span{
+    font-size: larger;
+}
+header .changeExamLevelAgain{
+    position: absolute;
+    right: 0%;
+    background-color: rgba(0, 0, 0, 0.5);
+    max-width: 450px !important;
+    padding: 10px 10px;
+    border-radius: 0 0 10px 10px;
+}
+header .changeExamLevelAgain label{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;align-items: center;justify-content: center;
+    font-size: large;
+    gap: 20px;
+}
+header .changeExamLevelAgain label select{
+    width: 110px;
+    font-size: large;
+    border: none;
+    outline: none;
+    background-color: rgb(128, 96, 0);
+    color: white;
+    padding: 0px 25px;
+}
+header .changeExamLevelAgain label select option{
+    padding: 0px 25px;
+}
+.changeExamLevelAgainReadyFace{
+    width: 100%;
+    height: 100%;
+    position: absolute !important;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, 0.500);
+    align-items: center;justify-content: center;
+    display: none;
+}.changeExamLevelAgainReadyFace div{
+    width: 450px;height: 200px;
+    background-color: darkred;
+    color: white;
+    display: flex;align-items: center;justify-content: space-around;
+    font-size: xx-large;
+    font-weight: bolder;
+    flex-direction: column;
+    border-radius: 10px;
+}.changeExamLevelAgainReadyFace div span{
+    display: flex;
+    gap: 20px;
+}.changeExamLevelAgainReadyFace div button{
+    width: 150px;
+    height: 40px;
+    color: white;
+    background-color: brown;
+    border: 1px solid white;
+    font-size: large;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+.changeExamLevelAgainReadyFace div button:hover{
+    background-color: rgb(198, 50, 50);
+}
+main{
+    width: 640px;
+    margin: auto;
+    height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+}
+.ExamsBig{
+    width: 100%;
+    height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 20px;
+    /* display: none; */
+}
+.Exams{
+    width: 100%;
+    height: calc(100% - 30px);
+
+}
+.Exam{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: absolute;
+    left: -100%;
+    animation:  .25s linear forwards;
+    color: rgb(0, 0, 0);
+}
+/* Exam question name */
+.Exam .question{
+    min-width:400px;
+    height: 30px;
+    padding: 20px 20px;
+    background-color: rgb(88, 0, 0);
+    /* display: flex;align-items: center;justify-content: center; */
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    animation: 1s showWithOpacity  ease-in-out;
+    line-height: 30px;
+}
+@keyframes showWithOpacity{
+    0%{
+        opacity: 0;
+        line-height: 60px;
+    }
+    100%{
+        opacity: 1;
+        line-height: 30px;
+    }
+}
+.Exam .answers {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: large;
+    font-weight: bolder;
+}
+.answers div {
+    background-color: rgb(88, 0, 0);
+    padding: 20px 10px;
+    color: white;
+    width: 130px;
+    border-radius: 25px;
+    position: relative;
+    animation: .2s linear forwards;
+    flex-grow:.7;
+}
+.options3_1,
+.options3_2,
+.options3_3 {
+    width: 180px !important;
+}
+
+/* end animation of 3 options */
+.answers div label {
+    width: calc(100% - 30px);
+    height: calc(100% - 20px);
+    padding: 10px 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    text-align: right;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 25px;
+    text-align: right;
+    line-height: 35px;
+}
+
+.answers div input {
+    margin: 3px 3px 0px 5px;
+    width: 15px;
+    height: 15px;
+    appearance: none;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.answers div input::after {
+    content: "";
+    display: block;
+    width: 5%;
+    height: 5%;
+    padding: 5px;
+    border-radius: 50%;
+    margin: 0;
+    background-color: rgb(88, 0, 0);
+    display: none;
+}
+
+.answers div input:checked::after {
+    display: block;
+}
+.Exam .btn {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.Exam .btn button {
+    width: 180px;
+    height: 50px;
+    background-color: #890000;
+    font-size: large;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 0;
+}
+.LevelLine {
+    /* width: calc(100% - 20px); */
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 4px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.LevelLine span {
+    border: 1px solid white;
+    background-color: rgb(255, 255, 255);
+    height: 20px;
+    width:20px;
+    padding: 2px;
+    border-radius: 50%;
+    color: white;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 28px;
+    user-select: none;
+    transition: .1s;
+}
+
+.resultsShow{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.resultsShow .content{
+    width: 640px;
+    height: 500px;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    background-color: #000000;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}.resultsShow .content::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    opacity: .6;
+    background-image: url(WinImage.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.resultsShow .content section{
+    width: 100%;
+    display: flex;align-items: center;justify-content: center;flex-direction: column;
+}
+.resultsShow .content section .resultDataShow{
+    width: 320px;
+    height: 130px;
+    display: flex;justify-content: space-around;
+}
+.resultsShow .content section .resultDataShow .dataText{
+    width: calc(100% - 125px);
+    height: 100%;
+    display: flex;align-items: center;justify-content: space-around;flex-direction: column;
+}
+.resultsShow .content section .resultDataShow .dataText div{
+    width: 100%;
+    height: 25px;
+    color: white;
+    font-size: larger;font-weight: bolder;
+    text-align: right;
+    position: relative;
+}
+.resultDataShow .dataText .rightAnswers::after{
+    content: "";
+    width: 20px;height: 20px;
+    background-color: rgb(0, 175, 0);
+    position: absolute;
+    right: -25px;
+    top: 2.5px;
+}
+.resultDataShow .dataText .wrongAnswers::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: rgb(175, 0, 0);
+    position: absolute;
+    right: -25px;
+    top: 2.5px;
+}
+.dataText .rightAnswers #rightAnswersNumber,
+.dataText .wrongAnswers #wrongAnswersNumber{
+    width: 20px;height: 20px;overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+.dataText .rightAnswers #rightAnswersNumber ul,
+.dataText .wrongAnswers #wrongAnswersNumber ul{
+    width: 100%;height: 100%;
+    position: absolute;
+    transition: .3s;
+}
+.dataText .rightAnswers #rightAnswersNumber ul li,
+.dataText .wrongAnswers #wrongAnswersNumber ul li {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    list-style: none;
+}
+.resultsShow .content .congratoilationContent{
+    height: 70px;
+}.resultsShow .content .resultContent {
+    height: 300px;
+    justify-content: space-around;
+    gap: 20px;
+}.resultsShow .content .showReslut_QuestAns {
+    height: 100px;
+}.resultsShow .content .resultContent h5{
+    font-size: 25px;
+}
+.congratoilation,.persent{
+-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to right, red, rgb(128, 0, 255));
+    /* text-shadow: 0  2px .5px black; */
+}
+.resultsShow .persent{
+    font-size: 35px;
+    margin-right: 5px;
+}
+.resultsShow article{
+    min-width: 50%;
+    max-width: 700px;
+    display: flex;align-items: center;
+    gap: 10px;
+}
+.resultsShow .showResultBtn{
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: 0;
+    outline: 0;
+    color: white;
+    cursor: pointer;
+    transition: 1s;
+    pointer-events: none;
+    cursor: not-allowed;
+    background-image: linear-gradient(to left, rgb(175, 0, 0), rgb(0, 0, 175));
+}
+.resultsShow .showResultBtn:hover{
+    background-image: linear-gradient(to left, rgb(218, 0, 0), rgb(0, 0, 219));
+}
+
+@keyframes Come {
+    0% {
+        display: flex;
+        left: -100%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+@keyframes Leave {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 100%;
+        display: none;
+    }
+}
+/* made loading shape */
+.loading{
+    width: 120px;
+    height:170px;
+    margin-bottom: 50px;
+    opacity: 0;
+    animation: OpacityTo1 .7s linear forwards;
+}
+@keyframes OpacityTo1{
+    0%{
+        opacity: 0;
+        margin-bottom: 50px;
+    }
+    100%{
+        opacity: 1;
+        margin-bottom: 130px;
+    }
+}
+@keyframes OpacityTo0 {
+    0% {
+        opacity: 1;
+        margin-bottom: 130px;
+    }
+
+    100% {
+        opacity: 0;
+        margin-bottom: 50px;
+    }
+}
+.loading .loadingItem{
+    width: calc(100% - 30px);/*Item_width=100% - border(Right&Left)*/
+    height:calc(100% - 80px);/*Item_height=100% - border(bottom&top) - h3[Height]*/
+    border: 15px solid #08ced9;
+    border-right-color: #057c99;
+    border-radius: 50%;
+    animation: loading .7s linear infinite;
+}
+@keyframes loading{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    50%{
+        transform: rotateZ(180deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+.loading h3{
+    text-align: center;
+    line-height: 40px;
+    padding: 15px 0px;
+    font-weight: bolder;
+    color: white;
+}
+.results{
+    width: 700px;
+    height: 600px;
+    display: flex;align-items: center;justify-content: center;flex-direction: column;
+    border-radius: 20px;
+}
+.results .content{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(147, 0, 0, 0.8);
+    position: relative;
+    display: flex;align-items: center;justify-content: center;
+    border-radius: 20px;
+}
+.results .content .right,
+.results .content .left{
+    width: 50px;height: 100px;
+    background-color: rgb(201, 0, 0);
+    color: white;
+    font-size: xx-large;
+    font-weight: bolder;
+    display: flex;align-items: center;justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.results .content .right:hover,
+.results .content.left:hover{
+    background-color: rgb(229, 0, 0);
+}
+.results .content.right:active,
+.results .content.left:active {
+    background-color: rgb(212, 105, 4);
+}
+.results .content .resultscontent{
+    width: calc(100% - 100px);
+    height: 100%;
+}
+.results .content .result{
+    width: 100%;
+    height: 100%;
+    display: flex;align-items: center;justify-content: space-between;flex-direction: column;
+}
+.results .content .resultscontent .QuestionNameHeader{
+    width: 100%;height: 50px;
+    background-color: aliceblue;
+    font-size: x-large;font-weight: bolder;
+    text-align: center;line-height: 50px;
+    border-radius: 10px;
+    position: relative;
+}
+.results .content .resultscontent .QuestionNameHeader div{
+    position: absolute;
+    left: 25px;
+    width: 50px;
+    font-size: medium;
+
+}
+.results .content .resultscontent .question{
+    color: white;
+}
+.results .content .result .options{
+    width: 90%;
+    font-size: larger;
+    font-weight: bolder;
+    display: flex;align-items: top;justify-content: space-evenly;
+    flex-wrap: wrap;gap: 10px;
+    user-select: none;
+    margin-bottom: 100px;
+}
+.content .result .options div{
+    padding: 10px;
+    width: 120px;
+    height: 30px;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    display: flex;align-items: center;justify-content: center;
+    flex-grow: .6;
+    border-radius: 10px;
+}
+/* get results question bg */
+.wrongResult span,
+.rightResult span{
+    width: 100%;height: 100%;
+    position: absolute;z-index: 2;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    user-select: none;
+}
+.rightResult::after{
+    content: "";
+    background-color: green;
+    width: 100%;
+    height:0%;
+    top: 0;
+    right: 0;
+    position: absolute;
+    z-index: 0;
+    animation: scale linear 1s forwards;
+    border-radius: 5px;
+}
+.wrongResult::after {
+    content: "";
+    background-color: red;
+    width: 100%;
+    height: 0%;
+    top: 0;
+    right: 0;
+    position: absolute;
+    z-index: 0;
+    animation: scale linear 1s forwards;
+    border-radius: 5px;
+}
+@keyframes scale{
+    0%{
+        height: 0%;
+    }
+    100%{
+        height: 100%;
+    }
+}
+/* make exam reload with massage */
+.results .message{
+    width: 450px;
+    height: 120px;
+    background-color: rgba(108, 0, 0, 0.8);
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    bottom: 50px;
+    animation:1s ease-in-out;
+}
+@keyframes Remember{
+    0%{
+        transform: rotateZ(0deg);
+        bottom:50px;
+    }
+    25%{
+        transform: rotateZ(5deg);
+        bottom:55px;
+    }
+    50% {
+        transform: rotateZ(-5deg);
+        bottom: 55px;
+    }
+    100%{
+        transform: rotateZ(0deg);
+        bottom:50px;
+    }
+}
+.results .message h3{
+    color: white;
+    margin-top: 30px;
+}
+.results .message .btns{
+    width: 100%;
+    height: 50px;
+    display: flex;justify-content: space-around;
+}
+.results .message .btns button{
+    width: 150px;height: 50px;
+    border: 0;outline: 0;
+    background-color: rgb(69, 0, 0);
+    color: white;
+    font-size: medium;font-weight: bolder;
+    border-radius: 10px;
+    margin-top: 35px;
+    cursor: pointer;
+    transition: .3s;
+}.results .message button:hover {
+    background-color: rgb(164, 107, 0);
+    transition: .3s;
+}
